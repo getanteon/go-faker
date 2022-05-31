@@ -4,7 +4,7 @@ Generates random data compatible with [Postman dynamic variables](https://learni
 
 [Ddosify open-source](https://github.com/ddosify/ddosify) version uses this faker library for dynamic variables.
 
-Extending [jaswdr/faker](https://github.com/jaswdr/faker) and using some constants from [faker-js](https://github.com/faker-js/faker).
+This library extends [jaswdr/faker](https://github.com/jaswdr/faker). There are also some constants from [faker-js](https://github.com/faker-js/faker) to produce random values.
 
 ## Usage 
 
