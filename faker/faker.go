@@ -12,11 +12,74 @@ import (
 
 type Faker struct {
 	Generator *rand.Rand
-	jfaker    faker.Faker
+}
+
+func (f Faker) RandomAddressLongitude() float64 {
+	return faker.New().Address().Longitude()
+}
+
+func (f Faker) RandomAddressLatitude() float64 {
+	return faker.New().Address().Latitude()
+}
+
+func (f Faker) RandomAddressCountry() string {
+	return faker.New().Address().Country()
+}
+
+func (f Faker) RandomAddressStreetAddress() string {
+	return faker.New().Address().StreetAddress()
+}
+
+func (f Faker) RandomAddresStreetName() string {
+	return faker.New().Address().StreetName()
+}
+
+func (f Faker) RandomAddressCity() string {
+	return faker.New().Address().City()
+}
+
+func (f Faker) RandomPersonSuffix() string {
+	return faker.New().Person().Suffix()
+}
+
+func (f Faker) RandomPersonTitle() string {
+	return faker.New().Person().Title()
+}
+
+func (f Faker) RandomPersonName() string {
+	return faker.New().Person().Name()
+}
+
+func (f Faker) RandomPersonLastName() string {
+	return faker.New().Person().LastName()
+}
+
+func (f Faker) RandomPersonFirstName() string {
+	return faker.New().Person().FirstName()
+}
+
+func (f Faker) RandomUserAgent() string {
+	return faker.New().UserAgent().UserAgent()
+}
+
+func (f Faker) RandomLocale() string {
+	return faker.New().Language().LanguageAbbr()
+}
+
+func (f Faker) RandomPassword() string {
+	return faker.New().Internet().Password()
+}
+
+func (f Faker) RandomMACAddress() string {
+	return faker.New().Internet().MacAddress()
+}
+
+func (f Faker) RandomSafeColorHex() string {
+	return faker.New().Color().Hex()
 }
 
 func (f Faker) RandomSafeColorName() string {
-	return f.jfaker.Color().SafeColorName()
+	return faker.New().Color().SafeColorName()
 }
 
 func (f Faker) RandomDateFuture() string {
