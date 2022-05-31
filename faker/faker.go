@@ -31,14 +31,12 @@ func (f Faker) RandomUUID() uuid.UUID {
 	return uuid.New()
 }
 
-func (f Faker) RandomISOTimestamp() string {
-	randomTime := rand.Int63n(time.Now().Unix()-94608000) + 94608000
-	return time.Unix(randomTime, 0).UTC().Format("2006-01-02T15:04:05.000Z")
+func (f Faker) CurrentISOTimestamp() string {
+	return time.Now().UTC().Format("2006-01-02T15:04:05.000Z")
 }
 
-func (f Faker) RandomTimestamp() int64 {
-	randomTime := rand.Int63n(time.Now().Unix()-94608000) + 94608000
-	return time.Unix(randomTime, 0).Unix()
+func (f Faker) CurrentTimestamp() int64 {
+	return time.Now().Unix()
 }
 
 func (f Faker) RandomGuid() uuid.UUID {
