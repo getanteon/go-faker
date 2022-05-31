@@ -7,11 +7,42 @@ import (
 	"strings"
 	"time"
 
+	"github.com/google/uuid"
 	"github.com/jaswdr/faker"
 )
 
 type Faker struct {
 	Generator *rand.Rand
+}
+
+func (f Faker) RandomStringMaxLenght(l int) string {
+	return faker.New().RandomStringWithLength(l)
+}
+
+func (f Faker) RandomFloatBetween(maxDecimals, min, max int) float64 {
+	return faker.New().RandomFloat(maxDecimals, min, max)
+}
+
+func (f Faker) RandomIntBetween(min, max int) int {
+	return faker.New().IntBetween(min, max)
+}
+
+func (f Faker) RandomUUID() uuid.UUID {
+	return uuid.New()
+}
+
+func (f Faker) RandomISOTimestamp() string {
+	randomTime := rand.Int63n(time.Now().Unix()-94608000) + 94608000
+	return time.Unix(randomTime, 0).UTC().Format("2006-01-02T15:04:05.000Z")
+}
+
+func (f Faker) RandomTimestamp() int64 {
+	randomTime := rand.Int63n(time.Now().Unix()-94608000) + 94608000
+	return time.Unix(randomTime, 0).Unix()
+}
+
+func (f Faker) RandomGuid() uuid.UUID {
+	return uuid.New()
 }
 
 func (f Faker) RandomAddressLongitude() float64 {
