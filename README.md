@@ -29,3 +29,14 @@ func main() {
 }
 
 ```
+
+## Supported Variables
+
+### Common
+
+| Variable Name         | Description                        | Type              | Method                 | Examples                                                                           |
+| ------                | ------------------------------     | ----------------- | -------------          | ------------------------------------------------------------------------------     | 
+| `_guid`               | UUID                               | uuid.UUID         | `RandomGuid()`         | `5066a748-9a72-404d-94f7-512c0779ff8e`, `adda49b1-7148-4a89-92de-6c4b756c1226`     |
+| `_timestamp`          | Current timestamp in seconds       | int64             | `RandomTimestamp()`    | `1654037772`, `1654037847`                                                         |
+| `_isoTimestamp`       | Current timestamp in seconds       | string            | `RandomISOTimestamp()` | `2022-05-31T22:58:40.653Z`, `2022-05-31T22:59:06.013Z`                             |
+| `_randomUUID`         | UUID                               | uuid.UUID         | `RandomUUID()`         | `35334fa3-fa83-4589-97e7-7419c9a2173e`, `6661c4cb-ec3a-464c-9ecc-d9fd051e8def`     |
