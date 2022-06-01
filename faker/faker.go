@@ -16,23 +16,23 @@ type Faker struct {
 }
 
 func (f Faker) RandomBoolean() bool {
-	return faker.New().Bool()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Bool()
 }
 
 func (f Faker) RandomInt() int {
-	return faker.New().IntBetween(0, 1000)
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).IntBetween(0, 1000)
 }
 
 func (f Faker) RandomStringMaxLenght(l int) string {
-	return faker.New().RandomStringWithLength(l)
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).RandomStringWithLength(l)
 }
 
 func (f Faker) RandomFloatBetween(maxDecimals, min, max int) float64 {
-	return faker.New().RandomFloat(maxDecimals, min, max)
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).RandomFloat(maxDecimals, min, max)
 }
 
 func (f Faker) RandomIntBetween(min, max int) int {
-	return faker.New().IntBetween(min, max)
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).IntBetween(min, max)
 }
 
 func (f Faker) RandomUUID() uuid.UUID {
@@ -52,71 +52,71 @@ func (f Faker) RandomGuid() uuid.UUID {
 }
 
 func (f Faker) RandomAddressLongitude() float64 {
-	return faker.New().Address().Longitude()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Address().Longitude()
 }
 
 func (f Faker) RandomAddressLatitude() float64 {
-	return faker.New().Address().Latitude()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Address().Latitude()
 }
 
 func (f Faker) RandomAddressCountry() string {
-	return faker.New().Address().Country()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Address().Country()
 }
 
 func (f Faker) RandomAddressStreetAddress() string {
-	return faker.New().Address().StreetAddress()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Address().StreetAddress()
 }
 
 func (f Faker) RandomAddresStreetName() string {
-	return faker.New().Address().StreetName()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Address().StreetName()
 }
 
 func (f Faker) RandomAddressCity() string {
-	return faker.New().Address().City()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Address().City()
 }
 
 func (f Faker) RandomPersonSuffix() string {
-	return faker.New().Person().Suffix()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Person().Suffix()
 }
 
 func (f Faker) RandomPersonTitle() string {
-	return faker.New().Person().Title()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Person().Title()
 }
 
 func (f Faker) RandomPersonName() string {
-	return faker.New().Person().Name()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Person().Name()
 }
 
 func (f Faker) RandomPersonLastName() string {
-	return faker.New().Person().LastName()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Person().LastName()
 }
 
 func (f Faker) RandomPersonFirstName() string {
-	return faker.New().Person().FirstName()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Person().FirstName()
 }
 
 func (f Faker) RandomUserAgent() string {
-	return faker.New().UserAgent().UserAgent()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).UserAgent().UserAgent()
 }
 
 func (f Faker) RandomLocale() string {
-	return faker.New().Language().LanguageAbbr()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Language().LanguageAbbr()
 }
 
 func (f Faker) RandomPassword() string {
-	return faker.New().Internet().Password()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Internet().Password()
 }
 
 func (f Faker) RandomMACAddress() string {
-	return faker.New().Internet().MacAddress()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Internet().MacAddress()
 }
 
 func (f Faker) RandomSafeColorHex() string {
-	return faker.New().Color().Hex()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Color().Hex()
 }
 
 func (f Faker) RandomSafeColorName() string {
-	return faker.New().Color().SafeColorName()
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Color().SafeColorName()
 }
 
 func (f Faker) RandomDateFuture() string {
@@ -567,7 +567,7 @@ func (f Faker) RandomAbbreviation() string {
 func (f Faker) RandomAlphanumeric() string {
 	const letters = "abcdefghijklmnopqrstuvwxyz0123456789"
 
-	seed := rand.NewSource(time.Now().Unix())
+	seed := rand.NewSource(time.Now().UnixNano())
 	generator := rand.New(seed)
 
 	b := make([]byte, 1)
@@ -641,7 +641,7 @@ func (f Faker) IntBetween(min, max int) int {
 }
 
 func NewFaker() (f Faker) {
-	seed := rand.NewSource(time.Now().Unix())
+	seed := rand.NewSource(time.Now().UnixNano())
 	generator := rand.New(seed)
 	f = Faker{Generator: generator}
 	return
