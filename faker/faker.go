@@ -171,7 +171,7 @@ func (f Faker) RandomLoremSentence() string {
 	for i := 0; i < size; i++ {
 		words += f.RandomLoremWords()
 	}
-	return words + "."
+	return strings.TrimSpace(words) + "."
 }
 
 func (f Faker) RandomLoremSentences() string {
@@ -377,11 +377,11 @@ func (f Faker) RandomCatchPhraseNoun() string {
 	return CompanyNouns[f.Generator.Intn(len(CompanyNouns))]
 }
 
-func (f Faker) RandomBsNouns() string {
+func (f Faker) RandomBsNoun() string {
 	return BusinessNouns[f.Generator.Intn(len(BusinessNouns))]
 }
 
-func (f Faker) RandomBsBuzzVerbs() string {
+func (f Faker) RandomBsBuzzWord() string {
 	return BusinessVerbs[f.Generator.Intn(len(BusinessVerbs))]
 }
 
@@ -390,7 +390,7 @@ func (f Faker) RandomBsAdjective() string {
 }
 
 func (f Faker) RandomBs() string {
-	return f.RandomBsBuzzVerbs() + " " + f.RandomBsAdjective() + " " + f.RandomBsNouns()
+	return f.RandomBsBuzzWord() + " " + f.RandomBsAdjective() + " " + f.RandomBsNoun()
 }
 
 func (f Faker) RandomCompanySuffix() string {
