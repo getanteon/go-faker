@@ -1,4 +1,13 @@
-# Go Faker
+<h1 align="center">
+    Fake Data Generator for Golang
+</h1>
+
+<p align="center">
+    <a href="https://github.com/ddosify/go-faker/releases" target="_blank"><img src="https://img.shields.io/github/v/release/ddosify/go-faker?style=for-the-badge&logo=github&color=orange" alt="go-faker latest version" /></a>&nbsp;
+    <a href="https://github.com/ddosify/go-faker/blob/master/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/ddosify/go-faker?style=for-the-badge&logo=none" alt="ddosify license" /></a>
+    <a href="https://discord.gg/9KdnrSUZQg" target="_blank"><img src="https://img.shields.io/discord/898523141788287017?style=for-the-badge&logo=discord&label=DISCORD" alt="ddosify discord server" /></a>
+</p>
+
 
 Generates random data compatible with [Postman dynamic variables](https://learning.postman.com/docs/writing-scripts/script-references/variables-list).
 
