@@ -13,3 +13,13 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+__debug*
+coverage.html
+main
+
+.devcontainer/
+dist/
+ddosify
+.vscode
+
