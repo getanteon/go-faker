@@ -40,7 +40,7 @@ func main() {
 
 ```
 
-## Supported Variables
+## Supported Methods
 
 ### Common
 
