@@ -75,15 +75,15 @@ func (f Faker) RandomAddressCity() string {
 	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Address().City()
 }
 
-func (f Faker) RandomPersonSuffix() string {
+func (f Faker) RandomPersonNameSuffix() string {
 	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Person().Suffix()
 }
 
-func (f Faker) RandomPersonTitle() string {
+func (f Faker) RandomPersonNamePrefix() string {
 	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Person().Title()
 }
 
-func (f Faker) RandomPersonName() string {
+func (f Faker) RandomPersonFullName() string {
 	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Person().Name()
 }
 
@@ -109,6 +109,10 @@ func (f Faker) RandomPassword() string {
 
 func (f Faker) RandomMACAddress() string {
 	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Internet().MacAddress()
+}
+
+func (f Faker) RandomIP() string {
+	return faker.NewWithSeed(rand.NewSource(time.Now().UnixNano())).Internet().Ipv4()
 }
 
 func (f Faker) RandomSafeColorHex() string {
@@ -174,6 +178,10 @@ func (f Faker) RandomLoremSentence() string {
 	return strings.TrimSpace(words) + "."
 }
 
+func (f Faker) RandomPhrase() string {
+	return f.RandomLoremSentences()
+}
+
 func (f Faker) RandomLoremSentences() string {
 	words := ""
 	size := f.Generator.Intn(6-2) + 2
@@ -199,6 +207,10 @@ func (f Faker) RandomLoremParagraph() string {
 		words += f.RandomLoremSentences()
 	}
 	return words
+}
+
+func (f Faker) RandomLoremText() string {
+	return f.RandomLoremParagraphs()
 }
 
 func (f Faker) RandomLoremParagraphs() string {
@@ -272,7 +284,7 @@ func (f Faker) RandomFilePath() string {
 	return f.RandomDirectoryPath() + "/" + f.RandomDomainWord() + "." + f.RandomFileExtension()
 }
 
-func (f Faker) RandomMimeTypes() string {
+func (f Faker) RandomMimeType() string {
 	return CommonMimeTypes[f.Generator.Intn(len(CommonMimeTypes))]
 }
 
@@ -577,7 +589,7 @@ func (f Faker) RandomAlphanumeric() string {
 	return string(b)
 }
 
-func (f Faker) Ipv6() string {
+func (f Faker) RandomIpv6() string {
 	ips := []string{}
 	ipv6Alphabet := []string{
 		"a", "b", "c", "d", "e", "f", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
