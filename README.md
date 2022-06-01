@@ -127,7 +127,7 @@ func main() {
 | `_randomCatchPhraseNoun`        | Random catchpharase noun         | string            | `RandomCatchPhraseNoun()`       | `array`, `installation`                                                |
 
 
-### Catchphrases
+### Databases
 
 | Variable Name                   | Description                      | Type              | Method                          | Examples                                 |
 | ------                          | ------------------------------   | ----------------- | -------------                   | ---------------------------------------  | 
