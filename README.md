@@ -202,7 +202,7 @@ func main() {
 
 ### Lorem Ipsum
 
-| Variable Name                   | Description                      | Type              | Method                          | Examples                                 |
+| Variable Name                   | Description                      | Type              | Method                          |  <div style="width:200px">Examples</div>                                 |
 | ------                          | ------------------------------   | ----------------- | -------------                   | ---------------------------------------  | 
 | `randomLoremWord`               | Random lorem ipsum word          | string            | `RandomLoremWord()`             | `iusto`, `quaerat`                 |
 | `randomLoremWords`              | Random lorem ipsum words         | string            | `RandomLoremWords()`            | `officiis iusto`, `deleniti molestiae veritatis non `                 |
