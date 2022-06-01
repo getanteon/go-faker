@@ -15,6 +15,14 @@ type Faker struct {
 	Generator *rand.Rand
 }
 
+func (f Faker) RandomBoolean() bool {
+	return faker.New().Bool()
+}
+
+func (f Faker) RandomInt() int {
+	return faker.New().IntBetween(0, 1000)
+}
+
 func (f Faker) RandomStringMaxLenght(l int) string {
 	return faker.New().RandomStringWithLength(l)
 }
@@ -559,9 +567,12 @@ func (f Faker) RandomAbbreviation() string {
 func (f Faker) RandomAlphanumeric() string {
 	const letters = "abcdefghijklmnopqrstuvwxyz0123456789"
 
+	seed := rand.NewSource(time.Now().Unix())
+	generator := rand.New(seed)
+
 	b := make([]byte, 1)
 	for i := range b {
-		b[i] = letters[rand.Intn(len(letters))]
+		b[i] = letters[generator.Intn(len(letters))]
 	}
 	return string(b)
 }
