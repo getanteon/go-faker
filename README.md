@@ -137,7 +137,7 @@ func main() {
 | -------------                | ------------------------------        | -----------------     | ---------------------------------------------------------------------  | 
 | `RandomBankAccount()`        | Random eight digit bank bumber        | string                | `44014606`, `21604863`                                                 |
 | `RandomBankAccountName()`    | Random bank account name              | string                | `Checking`, `Home Loan`                                                |
-| `RandomCreaditCardMask()`    | Random credit card mask number        | string                | `6520`, `5339`                                                         |
+| `RandomCreditCardMask()`     | Random credit card mask number        | string                | `6520`, `5339`                                                         |
 | `RandomBankAccountBic()`     | Random bank identifier code (swift)   | string                | `BKTRTRIS`, `SOGEFRPPRIG`                                              |
 | `RandomBankAccountIban()`    | Random IBAN                           | string                | `HU63755471863115172345115723`, `EE268872311844634138`                 |
 | `RandomTransactionType()`    | Random transaction type               | string                | `invoice`, `payment`                                                   |
