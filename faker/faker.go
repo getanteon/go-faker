@@ -440,7 +440,7 @@ func (f Faker) RandomTransactionType() string {
 	return BankTransactionTypes[f.Generator.Intn(len(BankTransactionTypes))]
 }
 
-func (f Faker) RandomCreaditCardMask() string {
+func (f Faker) RandomCreditCardMask() string {
 	return strconv.Itoa(f.Generator.Intn(9999-1000) + 1000)
 }
 
